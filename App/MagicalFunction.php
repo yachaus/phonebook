@@ -21,7 +21,4 @@ trait MagicalFunction
         return isset($this->data[$name]);
     }
 
-    public function counter(){
-        return $this->data;
-    }
 }

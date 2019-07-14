@@ -1,10 +1,8 @@
 <?php
 
-
 namespace App\Classes\Models;
 
-class Country
-    extends Model
+class Country extends Model
 {
     const TABLE = 'countries';
     public $id;

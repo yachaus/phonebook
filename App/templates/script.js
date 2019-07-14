@@ -1,3 +1,38 @@
+$(function() {
+    $.ajax({
+        url:$('#tab2').attr('href'),
+        success: function(data) {
+            document.getElementById('block').innerHTML = data;
+        }
+    });
+    return false;
+});
+
+
+$('#tab1').click(function() {
+    $(this).addClass('active');
+    $('#tab2').removeClass('active')
+});
+
+
+$('#tab2').click(function() {
+    $(this).addClass('active');
+    $('#tab1').removeClass('active')
+});
+
+$(function() {
+    $('.tabs a').click(function() {
+        $.ajax({
+            url:$(this).attr('href'),
+            success: function(data) {
+                document.getElementById('block').innerHTML = data;
+            }
+        });
+        return false;
+    });
+});
+
+
 function show(element) {
     var id = element.id;
     id = id.substr(-1, 1);

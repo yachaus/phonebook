@@ -4,8 +4,7 @@ namespace App\Classes\View;
 
 use App\MagicalFunction;
 
-class View
-    implements \ArrayAccess
+class View implements \ArrayAccess
 {
     use MagicalFunction;
 
@@ -29,12 +28,8 @@ class View
     {
         return isset($this->data[$offset]) ? $this->data[$offset] : null;
     }
-    /**
-     * Метод, возвращающий буфер вывода
-     * @param $template
-     * @return false|string
-     */
-    public function render($content)
+
+    public function renderLayout($content)
     {
         ob_start();
         foreach ($this->data as $property => $value ) {
@@ -46,10 +41,25 @@ class View
         return $out;
     }
 
-    /**
-     * Метод, выводящий на экран буфер вывода
-     * @param $path string путь к шаблону
-     */
+
+    public function displayLayout($template)
+    {
+        echo $this->renderLayout($template);
+    }
+
+    public function render($template)
+    {
+        ob_start();
+        foreach ($this->data as $property => $value ) {
+            $$property = $value;
+        }
+        include $template;
+        $out = ob_get_contents();
+        ob_end_clean();
+        return $out;
+    }
+
+
     public function display($template)
     {
         echo $this->render($template);

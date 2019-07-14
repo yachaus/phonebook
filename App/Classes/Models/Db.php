@@ -12,24 +12,24 @@ class Db
 
     protected function __construct()
     {
-            $this->dbh = new \PDO('mysql:host=localhost; dbname=phonebook', 'root', 'root');
+        $this->dbh = new \PDO('mysql:host=localhost; dbname=phonebook', 'root', 'root');
     }
 
     public function execute($sql, $params = [])
     {
-            $sth = $this->dbh->prepare($sql);
-            $res = $sth->execute($params);
-            return $res;
+        $sth = $this->dbh->prepare($sql);
+        $res = $sth->execute($params);
+        return $res;
     }
 
     public function query($sql, $class, $params = [])
     {
-            $sth = $this->dbh->prepare($sql);
-            $res = $sth->execute($params);
-            if (false !== $res) {
-                return $sth->fetchAll(8, $class);
-            } else
-                return false;
+        $sth = $this->dbh->prepare($sql);
+        $res = $sth->execute($params);
+        if (false !== $res) {
+            return $sth->fetchAll(8, $class);
+        } else
+            return false;
     }
 
     public function queryEach($sql, $class, $params = [])

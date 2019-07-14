@@ -38,9 +38,7 @@ select {
 }
 
 .column {
-    overflow: scroll;
     display: inline-block;
-    max-height: 330px;
     width: 30vh;
     vertical-align: top;
     padding-left: 1px;
@@ -84,13 +82,6 @@ input {
     margin-bottom: 10px;
 }
 
-.login {
-    width: 100vh;
-    height: 60vh;
-    background-color: white;
-    box-shadow: inset 5px 4px 100px 20px rgba(154, 147, 140, 0.35);
-    padding: 20px;
-}
 
 .top {
     float: top;
@@ -105,7 +96,7 @@ input {
 
 .admintab {
     width: 100vh;
-    height: 410px;
+    min-height: 410px;
     background-color: white;
     box-shadow: inset 5px 4px 100px 20px rgba(154, 147, 140, 0.35);
     padding: 20px;
@@ -113,6 +104,7 @@ input {
 
 .text {
     font: lighter 15px Helvetica, sans-serif;
+
 }
 
 .logout {
@@ -148,14 +140,21 @@ form {
 }
 
 .menu {
-    overflow: scroll;
     border-top: 20px white;
     width: 100vh;
-    height: 370px;
+    min-height: 60vh;
     z-index: 1;
     padding: 20px;
     background-color: white;
     box-shadow: inset 5px 4px 100px 20px rgba(154, 147, 140, 0.35);
+}
+
+.login {
+    width: 100vh;
+    height: 60vh;
+    background-color: white;
+    box-shadow: inset 5px 4px 100px 20px rgba(154, 147, 140, 0.35);
+    padding: 20px;
 }
 
 h3 {
@@ -213,10 +212,6 @@ table {
     display: inline-block;
 }
 
-.tab input[type="radio"] {
-    display: none;
-}
-
 .section {
     padding-top: 10.35px;
     padding-left: 1px;
@@ -245,10 +240,9 @@ table {
     border-top: 1px solid white;
     border-bottom: 1px solid #666;
     left: 0;
-    display: none;
 }
 
-.tab :checked + .tab-title {
+.active {
     position: relative;
     background: #ed8a31;
     top: 1px;
@@ -257,6 +251,7 @@ table {
     margin-bottom: 1px;
 }
 
-.tab :checked ~ .tab-content {
-    display: block;
+.tab a:hover {
+    text-decoration: none;
+    color: white;
 }

@@ -7,8 +7,7 @@ use App\Classes\Models\Model;
 use App\Classes\Models\Email;
 use App\Classes\Models\Number;
 
-class Contact
-    extends Model
+class Contact extends Model
 {
     const TABLE = 'contacts';
 

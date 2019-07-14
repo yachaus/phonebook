@@ -1,13 +1,10 @@
 <?php
 
-
 namespace App\Classes\Models;
-
 
 use App\Classes\Models\Db;
 
-class Number
-    extends Model
+class Number extends Model
 {
     const TABLE = 'phone_numbers';
     public $id;
@@ -38,3 +35,4 @@ class Number
         return $parsed_arrays;
     }
 }
+

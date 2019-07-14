@@ -1,12 +1,10 @@
 <?php
 
-
 namespace App\Classes\Models;
 
 use App\Classes\Models\Db;
 
-class Email
-    extends Model
+class Email extends Model
 {
     const TABLE = 'emails';
     public $id;
