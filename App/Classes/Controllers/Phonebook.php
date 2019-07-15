@@ -8,14 +8,11 @@ use App\Classes\Models\Number;
 
 class Phonebook extends Base
 {
-    private $index_template = '/../../templates/index.php';
-    private $myContact_template = '/../../templates/index2.php';
-
     protected function actionAll()
     {
         unset($_SESSION['user_id']);
         $this->view['login_tab'] = (empty($_GET['login_tab'])) ? NULL : $_GET['login_tab'];
-        $this->view->displayLayout(__DIR__ . $this->index_template);
+        $this->view->displayLayout();
     }
 
     protected function actionMyContact()
@@ -23,12 +20,12 @@ class Phonebook extends Base
         if (!empty($_SESSION['user_id'])) {
             $this->save($_POST);
             $this->view['user'] = Contact::findById($_SESSION['user_id']);
-            $this->view->displayLayout(__DIR__ . $this->myContact_template);
+            $this->view->displayLayout();
         } elseif (isset($_POST['password']) && isset($_POST['login'])) {
             $user = Contact::signIn($_POST['password'], $_POST['login']);
             if (!empty($user)) {
                 $this->view['user'] = $user;
-                $this->view->displayLayout(__DIR__ . $this->myContact_template);
+                $this->view->displayLayout();
             } else header('Location:index.php');
         }
     }

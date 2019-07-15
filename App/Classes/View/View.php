@@ -29,7 +29,7 @@ class View implements \ArrayAccess
         return isset($this->data[$offset]) ? $this->data[$offset] : null;
     }
 
-    public function renderLayout($content)
+    public function renderLayout()
     {
         ob_start();
         foreach ($this->data as $property => $value ) {
@@ -42,9 +42,9 @@ class View implements \ArrayAccess
     }
 
 
-    public function displayLayout($template)
+    public function displayLayout()
     {
-        echo $this->renderLayout($template);
+        echo $this->renderLayout();
     }
 
     public function render($template)
