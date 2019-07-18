@@ -9,10 +9,10 @@ use App\Classes\Models\Number;
 class Phonebook extends Base
 {
     private $layout = __DIR__.'/../../templates/layout.php';
+
     protected function actionAll()
     {
         unset($_SESSION['user_id']);
-        $this->view['login_tab'] = (empty($_GET['login_tab'])) ? NULL : $_GET['login_tab'];
         $this->view->display($this->layout);
     }
 

@@ -30,7 +30,7 @@ select {
 
 .submit {
     float: right;
-    margin-right: 5%;
+    margin-right: 0.5cm;
     background: #ed8a31;
     color: white;
     font: lighter 20px Helvetica, sans-serif;
@@ -46,7 +46,7 @@ select {
 
 .myContact {
     border: 0;
-    width: max-content;
+    width: 100%;
 }
 
 input {
@@ -71,7 +71,8 @@ input {
 }
 
 .orange {
-    padding-right: 113px;
+    padding-left: 1px;
+    width: 31vh;
     font: lighter 18px Helvetica, sans-serif;
     color: #eba064;
 }
@@ -84,9 +85,7 @@ input {
 
 
 .top {
-    float: top;
     display: flex;
-    justify-content: center
 }
 
 .scroll {
@@ -131,7 +130,7 @@ form {
 }
 
 .bottom {
-    float: bottom;
+    width: 100%;
 }
 
 #PublishMyContact {

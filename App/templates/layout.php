@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" resource="" href="/phonebook/App/templates/styles.css">
+    <link rel="stylesheet" resource="" href="/App/templates/styles.css">
     <script
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -24,19 +24,19 @@
 <div id="content">
     <div class="tabs">
         <div class="tab">
-            <a href="/Phonebook/Ajax/PublicPhonebook" class="tab-title" id="tab1" checked>Public Phonebook</a>
+            <a href="/Ajax/PublicPhonebook" class="tab-title" id="tab1">Public Phonebook</a>
         </div>
         <div class="tab">
             <?php if (isset($_SESSION['user_id'])): ?>
-            <a href="/Phonebook/Ajax/MyContact" class="tab-title active" id="tab2">My Contact</a>
+            <a href="/Ajax/MyContact" class="tab-title active" id="tab2">My Contact</a>
             <?php else: ?>
-            <a href="/Phonebook/Ajax/Login" class="tab-title active"id="tab2">Login</a>
+            <a href="/Ajax/Login" class="tab-title active"id="tab2">Login</a>
             <?php endif; ?>
         </div>
         <div id="block">
         </div>
     </div>
 </div>
-<script src="App/templates/script.js"></script>
+<script src="/App/templates/script.js"></script>
 </body>
 </html>

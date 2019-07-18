@@ -26,7 +26,7 @@ class Email extends Model
                         'id' => $id,
                         'publish' => $publish,
                         'email' => $email,
-                        'contact_id' => $data['id']
+                        'contact_id' => $_SESSION['user_id']
                     ];
                     $parsed_arrays[] = $array;
                 }

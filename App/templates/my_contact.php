@@ -1,6 +1,5 @@
 <section class="tab-content">
     <div class="admintab">
-        <form method="post" action="/phonebook/MyContact" class="myContact">
             <div class="top">
                 <div class="orange">
                     CONTACT
@@ -12,6 +11,7 @@
                     EMAILS
                 </div>
             </div>
+        <form method="post" action="/Phonebook/MyContact" class="myContact">
             <div class="column">
                 <div>
                     <label for="firstname" class="label">First name *</label>
@@ -85,7 +85,6 @@
                            value="2" <?= ($user->publish == 2) ? 'checked' : ''; ?>>
                     <div class="phonelabel">Publish my contact</div>
                 </div>
-                <input type="hidden" name="id" value="<?= $user->id ?>">
                 <button type="submit" name="button" class="submit">SAVE</button>
             </div>
         </form>

@@ -30,11 +30,8 @@ class Base
         $url = $this->url();
         if ('index.php' == $url[0] || '' == $url[0]) {
             $ctrl = '\App\Classes\Controllers\Phonebook';
-        } elseif (isset($url[1]) && 'Ajax' == $url[1]){
-            $ctrl = $url[1];
-            $ctrl = '\App\Classes\Controllers\\' . $ctrl;
         } else {
-            $ctrl = '\App\Classes\Controllers\Phonebook';
+            $ctrl = '\App\Classes\Controllers\\'.$url[0];
         }
         return $ctrl;
     }
