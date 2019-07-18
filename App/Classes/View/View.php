@@ -29,24 +29,6 @@ class View implements \ArrayAccess
         return isset($this->data[$offset]) ? $this->data[$offset] : null;
     }
 
-    public function renderLayout()
-    {
-        ob_start();
-        foreach ($this->data as $property => $value ) {
-            $$property = $value;
-        }
-        include __DIR__.'/../../templates/layout.php';
-        $out = ob_get_contents();
-        ob_end_clean();
-        return $out;
-    }
-
-
-    public function displayLayout()
-    {
-        echo $this->renderLayout();
-    }
-
     public function render($template)
     {
         ob_start();
@@ -58,7 +40,6 @@ class View implements \ArrayAccess
         ob_end_clean();
         return $out;
     }
-
 
     public function display($template)
     {
