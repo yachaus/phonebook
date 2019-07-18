@@ -85,6 +85,7 @@
                            value="2" <?= ($user->publish == 2) ? 'checked' : ''; ?>>
                     <div class="phonelabel">Publish my contact</div>
                 </div>
+                <input type="hidden" name="id" value="<?= $user->id ?>">
                 <button type="submit" name="button" class="submit">SAVE</button>
             </div>
         </form>

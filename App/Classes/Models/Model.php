@@ -71,7 +71,6 @@ abstract class Model
         }
         $string = implode(', ', $string);
         $sql = 'UPDATE ' . static::TABLE . ' SET ' . $string . ' WHERE ' . static::TABLE . '.id = ' . $this->id;
-
         $db = Db::instance();
         $db->execute($sql);
     }
@@ -97,7 +96,6 @@ abstract class Model
         VALUES
         (' . implode(',', array_keys($values)) . ')
          ';
-
         $db->execute($sql, $values);
     }
 

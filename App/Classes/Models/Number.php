@@ -26,7 +26,7 @@ class Number extends Model
                         'id' => $id,
                         'publish' => $publish,
                         'number' => $number,
-                        'contact_id' => $_SESSION['user_id']
+                        'contact_id' => $data['id']
                     ];
                     $parsed_arrays[] = $array;
                 }
