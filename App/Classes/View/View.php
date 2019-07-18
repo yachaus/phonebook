@@ -2,11 +2,9 @@
 
 namespace App\Classes\View;
 
-use App\MagicalFunction;
-
 class View implements \ArrayAccess
 {
-    use MagicalFunction;
+    protected $data = [];
 
     public function offsetSet($offset, $value) {
         if (is_null($offset)) {
